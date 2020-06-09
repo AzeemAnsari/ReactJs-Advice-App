@@ -12,19 +12,20 @@ class App extends React.Component{
 	}
 
 // http request to fetch api
-fetchAdvice = () => {
-	this.setState({loading: true, errorMsg: null});
-	axios.get('https://api.adviceslip.com/advice')
-	.then(
-      res => {
-      	this.setState({loading: false});
-      	const {advice} = res.data.slip;
-        this.setState({advice}); 
-      })
-      .catch(error => {if(error){
-		this.setState({errorMsg: error, loading: false})
-	}})
-      
+fetchAdvice = async () => {
+    try {
+        this.setState({loading: true, errorMsg: null});
+        const res = await axios.get('https://api.adviceslip.com/advice')
+        this.setState({
+            loading: false,
+            advice: res.data.slip.advice
+        })
+    } catch(error) {
+        this.setState({
+            errorMsg: error,
+            loading: false
+        })
+    }
 }
 
 	render(){ 
