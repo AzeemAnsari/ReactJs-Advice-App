@@ -7,7 +7,7 @@ import axios from 'axios';
 
 import Logo from '../images/logo.png';
 
-import { GlobalStyles, AppWrapper, AdviceCard } from './Styles';
+import { GlobalStyles, AppWrapper } from './Styles';
 
 const App = () => {
   const [advice, setAdvice] = useState('');
