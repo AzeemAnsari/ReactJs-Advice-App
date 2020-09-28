@@ -28,9 +28,13 @@ export const LogoDiv = styled.div`
   width: 80%;
   margin: auto;
   padding-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   @media only screen and (max-width: 600px) {
     text-align: center;
-    padding-top: 5%;
+    padding: 5% 5% 0;
+    width: 100%;
   }
 `;
 
